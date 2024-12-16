@@ -79,7 +79,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen>
       );
 
       if(response == "yesConfirmed")
-      {
+      {//it means user received the parcel and now update the db status
         updateStatusValueInDatabase();
       }
     }

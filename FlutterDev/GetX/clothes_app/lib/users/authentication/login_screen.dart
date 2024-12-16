@@ -43,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
         if(resBodyOfLogin['success']==true){
           Fluttertoast.showToast(msg: "you are logged-in Successfully");
 
-          //receiving userdata
+          //receiving userdata from db
           User userInfo= User.fromJson( resBodyOfLogin["userData"]);
 
           //save user info to local storage using shared prefrences

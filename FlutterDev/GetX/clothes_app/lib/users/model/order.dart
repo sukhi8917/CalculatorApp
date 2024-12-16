@@ -1,5 +1,6 @@
 class Order
 {
+  //this model class help us to sending the all details to the mysql db
   int? order_id;
   int? user_id;
   String? selectedItems;
@@ -30,6 +31,7 @@ class Order
 
   //first we convert this simple data to json format
   //becoz we are sending these data to mysql db
+  //imageSelectedBase64 this image  is now in bytes form
   Map<String, dynamic> toJson(String imageSelectedBase64)=>
       {
         "order_id": order_id.toString(),

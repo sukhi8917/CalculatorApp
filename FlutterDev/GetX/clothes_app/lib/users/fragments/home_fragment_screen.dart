@@ -145,6 +145,8 @@ class HomeFragmentScreen extends StatelessWidget {
       decoration: InputDecoration(
         prefixIcon: IconButton(
           onPressed: (){
+            //when user type any text in search bar then this text is
+            //send to searchItems screen
             Get.to(SearchItems(typedKeyWords: searchController.text));
           },
           icon: const Icon(

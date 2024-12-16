@@ -19,6 +19,7 @@ import 'package:http/http.dart' as http;
 
 class OrderConfirmationScreen extends StatelessWidget
 {
+  //making these var list,for getting the item info from Order_now_screen
   final List<int>? selectedCartIDs;
   final List<Map<String, dynamic>>? selectedCartListItemsInfo;
   final double? totalAmount;
@@ -242,7 +243,7 @@ class OrderConfirmationScreen extends StatelessWidget
                 maxWidth: MediaQuery.of(context).size.width * 0.7,
                 maxHeight: MediaQuery.of(context).size.width * 0.6,
               ),
-              child: imageSelectedByte.length > 0 //image is selected
+              child: imageSelectedByte.length > 0 //image is selected then display it from memory
                   ? Image.memory(imageSelectedByte, fit: BoxFit.contain,)
                   : const Placeholder(color: Colors.white60,),
             )),
@@ -250,6 +251,8 @@ class OrderConfirmationScreen extends StatelessWidget
             const SizedBox(height: 16),
 
             //confirm and proceed
+            //whe we use gets state mang
+            //becoz without provide transaction proof this button is cant work
             Obx(()=> Material(
               elevation: 8,
               color: imageSelectedByte.length > 0 ? Colors.purpleAccent : Colors.grey,
@@ -258,7 +261,7 @@ class OrderConfirmationScreen extends StatelessWidget
                 onTap: ()
                 {
                   if(imageSelectedByte.length > 0)
-                  {
+                  {//if image attached then the button work
                     //save order info
                     saveNewOrderInfo();
                   }

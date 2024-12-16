@@ -21,7 +21,7 @@ $sqlQuery = "SELECT * FROM users_table WHERE user_email = '$userEmail' AND user_
     echo json_encode(
         array(
             "success"=>true,
-            "userData"=>$userRecord[0],
+            "userData"=>$userRecord[0],  //this is complete row of a user that found in db
         )
     );
  }

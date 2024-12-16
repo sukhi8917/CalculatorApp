@@ -59,6 +59,9 @@ class ProfileFragmentScreen extends StatelessWidget {
    }
   }
 
+  //this is a reusible widget thats create one time and use multiple time
+  //if we want these type of widget thats we cant create it 4-5 time
+  //just give iconDAta and userData and create it
   Widget userInfoItemProfile(IconData iconData,String userData){
     return Container(
       decoration: BoxDecoration(

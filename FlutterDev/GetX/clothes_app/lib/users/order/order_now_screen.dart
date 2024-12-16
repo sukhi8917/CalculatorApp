@@ -7,10 +7,11 @@ import 'package:get/get_core/src/get_main.dart';
 class OrderNowScreen extends StatelessWidget {
 
 
-  final List<Map<String,dynamic>>? selectedCartListItemInfo;
+  final List<Map<String,dynamic>>? selectedCartListItemInfo;//make this list for getting all item thats come from carlistscreen
   final double? totalAmount;
   final List<int>? selectedCartIDs;
 
+  //we access the method of OrderNowController by the help of orderNowController instance
   OrderNowController orderNowController = Get.put(OrderNowController());
 
   List<String> deliverySystemNamesList = ["FedEx", "DHL", "United Parcel Service"];
@@ -301,10 +302,11 @@ class OrderNowScreen extends StatelessWidget {
                 {
                   if(phoneNumberController.text.isNotEmpty && shipmentAddressController.text.isNotEmpty)
                   {
+                    //sending the details in OrdeConfirmationScreen
                     Get.to(OrderConfirmationScreen(
                       selectedCartIDs: selectedCartIDs,
                       selectedCartListItemsInfo: selectedCartListItemInfo,
-                      totalAmount: totalAmount,
+                      totalAmount: totalAmount, //this is total amount of all item
                       deliverySystem: orderNowController.deliverySys,
                       paymentSystem: orderNowController.paymentSys,
                       phoneNumber: phoneNumberController.text,
@@ -457,6 +459,7 @@ class OrderNowScreen extends StatelessWidget {
 
                       //price
                       Text(
+                        //each item totalAmount
                         "₹" + eachSelectedItem["totalAmount"].toString(),
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(

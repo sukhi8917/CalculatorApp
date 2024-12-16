@@ -27,6 +27,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   var isObsecure=true.obs;
   validateUserEmail() async
   {
+    //validate email that it is already exist or not in db
     try {
       //response from server
       var res = await http.post(
@@ -62,6 +63,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
     registerAndSaveUserRecord() async
     {
+      //nama email password pehle User model ko pass kiya usne isko json me convert kr diya
         User userModel=User(
         1,
         nameController.text.trim(),
@@ -80,6 +82,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             if(resBodyOfSignUp['success']==true){
               Fluttertoast.showToast(msg: "Congratulations,you are SignUp Successfully");
               setState(() {
+                //after click button of signup details will be clear
                 nameController.clear();
                 emailController.clear();
                 passwordController.clear();
@@ -321,6 +324,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                       onTap: (){
                                         if(formKey.currentState!.validate()){
                                           //validate the email
+                                          //if any field like email name password
+                                          //khali reh jaye isliye validate check
+                                          //krege
                                           validateUserEmail();
                                         }
 

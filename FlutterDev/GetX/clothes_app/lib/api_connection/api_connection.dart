@@ -1,7 +1,8 @@
 //connection with flutterapp+api
 //ipconfig getifaddr en0
+//route
 class API {
-  static const hostConnect = "http:// 14.139.241.211/api_clothes_store";
+  static const hostConnect = "http://192.168.60.182/api_clothes_store";
   static const hostConnectUser = "$hostConnect/user";
   static const hostConnectAdmin = "$hostConnect/admin";
   static const hostItem = "$hostConnect/items";

@@ -13,7 +13,7 @@ import 'package:http/http.dart' as http;
 
 class ItemDetailsScreen extends StatefulWidget
 {
- final Clothes? itemInfo;
+ final Clothes? itemInfo; //getting all tha data by this key name
  ItemDetailsScreen({this.itemInfo});
 
   @override
@@ -180,6 +180,8 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen>
     // TODO: implement initState
     super.initState();
     validateFavoriteList();
+    //we execute this function in initState becoz UI is change in starting of tha app
+    //when user come in the itemScreen
   }
 
   @override
@@ -244,6 +246,8 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen>
                     {
                       if(itemDetailsController.isFavorite == true)
                       {
+                        //setIsFavorite is true so if we click on favorite icon
+                        //this item is deleted from favorite list
                         //if it is true it means that the item is already save/self to the favorite
                         //delete item from favorite
                         deleteItemFromFavoriteList();

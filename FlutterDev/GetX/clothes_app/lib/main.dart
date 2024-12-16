@@ -4,6 +4,7 @@ import 'package:clothes_app/users/userPreferences/user_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       home:FutureBuilder(
         future:RememberUserPrefs.readUserInfo(),
         builder: (context,dataSnapshot){
-          if(dataSnapshot.data==null){
+          if(dataSnapshot.data==null){//user not logged-in
             return LoginScreen();
           }
           else{

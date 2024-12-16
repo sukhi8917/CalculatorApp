@@ -89,6 +89,7 @@ class _CartListScreenState extends State<CartListScreen> {
 
           if(responseBodyFromDeleteCart["success"] == true)
             {
+              //means selected item is deleted from cart table in db
               getCurrentUserCartList();
             }
         }
@@ -156,7 +157,7 @@ class _CartListScreenState extends State<CartListScreen> {
         if(cartListController.selectedItemList.contains(selectedCartLIstItem.cart_id))
           {
             Map<String,dynamic> itemInformation =
-                {
+                {//all the info of selected item is saved in this itemInformation map
                   "item_id":selectedCartLIstItem.item_id,
                   "name":selectedCartLIstItem.name,
                   "image":selectedCartLIstItem.image,
@@ -210,6 +211,8 @@ class _CartListScreenState extends State<CartListScreen> {
               //if this is true is simple means that user click on checkbox of all selected
               if(cartListController.isSelectedAll)
               {
+                //all the item in tha cartList so we are just adding all item in the
+                //addSelectedItem list
                 cartListController.cartList.forEach((eachItem)
                 {
                   cartListController.addSelectedItem(eachItem.cart_id!);
@@ -339,6 +342,8 @@ class _CartListScreenState extends State<CartListScreen> {
                             cartListController.deleteSelectedItem(cartModel.cart_id!);
                           }
                        else{
+                         //when user click on checkbox this item is added in selectedItemList
+                          //and then with tha help of this selectedItemList calculateTotalAmount
                           cartListController.addSelectedItem(cartModel.cart_id!);
                         }
                         calculateTotalAmount();

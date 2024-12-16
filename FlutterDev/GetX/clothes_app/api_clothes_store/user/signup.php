@@ -14,6 +14,7 @@ $sqlQuery = "INSERT INTO users_table SET user_name = '$userName',user_email = '$
  $resultOfQuery= $connectNow->query($sqlQuery);
 
  if($resultOfQuery){
+ //query run successfully or data save successfully in the db
     echo json_encode(array("success"=>true));
  }
  else{

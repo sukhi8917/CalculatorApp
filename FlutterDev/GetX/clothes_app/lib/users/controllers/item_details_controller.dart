@@ -1,5 +1,15 @@
 import 'package:get/get.dart';
 
+
+/*This code defines a class called ItemDetailsController,
+ which is responsible for managing the details of an item,
+ like its quantity, size, color, and whether it’s marked as a favorite.
+  It uses GetX, a state management library for Flutter,
+  to make these item properties reactive (meaning they automatically update the UI
+   when their values change).
+   It uses reactive variables (RxInt, RxBool) to automatically update the UI
+    whenever these properties change.
+   */
 class ItemDetailsController extends GetxController
 {
   RxInt _quantityItem = 1.obs;
